@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blanchedalmond;
+    color: red;
+    height: 100vh;
+    width: 100vw;
+}
+
+input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+section {
+   padding: 50px;
+}
+
+#sign-in-form h1 {
+    margin-bottom: 15px;
+}
+
+#signed-in {
+    width: 500px;
+    height: 800px;
+    border: 1px solid brown;
+}
