@@ -28,10 +28,40 @@
 */
 
 const inputName = document.body.querySelector("#name-div input");
+const idNum = document.body.querySelector("#id-div input")
 const nameSubmit = document.body.querySelector("#sign-in-form button");
+const userList = document.body.querySelector("#user-list")
 
 nameSubmit.addEventListener("click", handleClick);
 
 function handleClick(){
-    console.log(inputName.value);
+    let newEmployee = new Employee(inputName.value, new Date(Date.now()))
+    workers[idNum.value] = newEmployee
+    inputName.value = ""
+    idNum.value = "" 
+    renderWorkers()
+}
+
+const workers = {
+
+}
+
+class Employee {
+    constructor(name, date){
+        this.name = name
+        this.date = date
+    }
+
+    populateSection(){
+        return `<div class = 'row'> <p>${this.name}</p><p>${this.date.toString()} \n</p></div>` 
+    }
+}
+
+function renderWorkers(){
+    console.log(workers)
+    userList.innerText = ""
+    for(let id of Object.keys(workers)){
+        console.log(id)
+        userList.innerHTML += workers[id].populateSection()
+    }
 }
