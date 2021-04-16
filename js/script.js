@@ -27,11 +27,42 @@
     (DOM Manipulation here) of that user being signed in - on the signed in sheet.
 */
 
-const inputName = document.body.querySelector("#name-div input");
-const nameSubmit = document.body.querySelector("#sign-in-form button");
+const inputName = document.body.querySelector("#name-div input")
+const idNum = document.body.querySelector("id-div input")
+const nameSubmit = document.body.querySelector("#sign-in-form button")
+const userList =  document.body.querySelector("userlist")
+
 
 nameSubmit.addEventListener("click", handleClick);
 
 function handleClick(){
-    console.log(inputName.value);
+    let newEmployee = new Employee(inputName.value, Date.now())
+    workers[idNum.value] = newEmployee
+    inputName.value = ""
+    idNum.value = ""
+    renderWorkers()
+}
+let id13 = "Bayley Arens"
+let id33 = "Lucian Bryan"
+let workers = {
+    
+}
+const workers = {
+
+}
+class Employee{
+    constructor(name, date){
+        this.name = name
+        this.date = date 
+    }
+    populateSection(){
+        return `${this.name} signed in at ${this.date.toString}`
+    }
+}
+function renderWorkers(){
+    //Object.keys()
+    for(let id of Object.keys(workers)){
+        console.log(id)
+        userList.innerHTML += workers[id].populateSection()
+    }
 }
