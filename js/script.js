@@ -27,7 +27,10 @@
     (DOM Manipulation here) of that user being signed in - on the signed in sheet.
 */
 
-
+const inputName = document.body.querySelector("#name-div input");
+const idNum = document.body.querySelector("#id-div input")
+const nameSubmit = document.body.querySelector("#sign-in-form button");
+const userList = document.body.querySelector("#user-list")
 
 nameSubmit.addEventListener("click", handleClick);
 
@@ -38,7 +41,6 @@ function handleClick(){
     idNum.value = "" 
     renderWorkers()
 }
-// testing 
 const workers = {
 
 }
