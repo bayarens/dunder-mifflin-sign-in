@@ -28,6 +28,35 @@
 */
 
 
+
+nameSubmit.addEventListener("click", handleClick);
+
+function handleClick(){
+    let newEmployee = new Employee(inputName.value, new Date(Date.now()))
+    workers[idNum.value] = newEmployee
+    inputName.value = ""
+    idNum.value = "" 
+    renderWorkers()
+}
+// testing 
+const workers = {
+
+}
+
+class Employee {
+    constructor(name, date){
+        this.name = name
+        this.date = date
+    }
+
+    populateSection(){
+        return `<div class = 'row'> <p>${this.name}</p><p>${this.date.toString()} \n</p></div>` 
+    }
+}
+
+function renderWorkers(){
+    console.log(workers)
+    userList.innerText = ""
     for(let id of Object.keys(workers)){
         console.log(id)
         userList.innerHTML += workers[id].populateSection()
