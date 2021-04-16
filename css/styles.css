@@ -26,3 +26,23 @@ section {
     height: 800px;
     border: 1px solid brown;
 }
+#name-signedIn{
+    position: relative;
+    z-index: 2;
+    margin-top: 100px;
+}
+
+#user-list p{
+    padding-right: 25px;
+    width: 200px
+}
+
+#user-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+}
